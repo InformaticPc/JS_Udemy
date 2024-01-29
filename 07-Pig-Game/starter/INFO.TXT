@@ -1,2 +1,3 @@
 When u roll in 1, lose current points & switch player
 Hold btn, sum points to players and switch player
+Who gets first to 150 points wins!

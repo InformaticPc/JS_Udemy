@@ -22,6 +22,24 @@ body {
   justify-content: center;
 }
 
+aside {
+  background-color: #333;
+  color: antiquewhite;
+  position: relative;
+  right: 100px;
+  height: 60rem;
+  width: 30rem;
+  text-align: center;
+}
+.instrucctions {
+  color: #c7365f;
+  font-size: 30px;
+  margin: 19px;
+}
+aside p {
+  font-size: 15px;
+}
+
 /* LAYOUT */
 main {
   position: relative;
