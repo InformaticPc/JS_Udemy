@@ -1,3 +1,8 @@
 When u roll in 1, lose current points & switch player
 Hold btn, sum points to players and switch player
 Who gets first to 150 points wins!
+
+IDEAS
+	aside element make flow shrink 1 to see if it fix to the
+	window view
+	Also to main element
