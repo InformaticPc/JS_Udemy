@@ -30,16 +30,20 @@ aside {
   height: 60rem;
   width: 30rem;
   border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+  padding-right: 0.5em;
+  padding-left: 0.4em;
 }
 .instrucctions {
   box-sizing: content-box;
   height: fit-content;
   width: fit-content;
+  text-align: justify;
 }
 /* select all child of aside element except h3 */
 aside > :not(h3) {
   font-size: 15px;
-  margin: 8px;
 }
 
 aside h3 {
@@ -53,8 +57,12 @@ aside h3 {
 li {
   list-style-position: inside;
 }
+/* pseudo-element ::marker */
 li::marker {
   color: #c7365f;
+  content: '-';
+  font-size: 1.5em;
+  white-space: pre-wrap;
 }
 /* LAYOUT */
 main {
