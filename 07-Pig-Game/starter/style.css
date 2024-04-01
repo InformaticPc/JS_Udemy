@@ -9,6 +9,7 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  flex-shrink: 1;
 }
 
 body {
@@ -20,26 +21,34 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 1rem;
 }
-
+/* view port MND:  https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Sizing_items_in_CSS */
 aside {
   background-color: #333;
   color: antiquewhite;
-  position: relative;
+  position: static;
   right: 100px;
   height: 60rem;
   width: 30rem;
   border-radius: 9px;
   display: flex;
+  flex-basis: 20rem 110rem;
+  flex-grow: 0.3;
+  flex-shrink: 3;
   flex-direction: column;
   padding-right: 0.5em;
   padding-left: 0.4em;
+  margin-right: 1.5rem;
 }
 .instrucctions {
   box-sizing: content-box;
   height: fit-content;
   width: fit-content;
   text-align: justify;
+  min-width: min-content;
+  margin-top: 0.2rem;
+  position: relative;
 }
 /* select all child of aside element except h3 */
 aside > :not(h3) {
@@ -76,6 +85,8 @@ main {
   border-radius: 9px;
   overflow: hidden;
   display: flex;
+  flex-shrink: 4;
+  min-width: min-content;
 }
 
 .player {

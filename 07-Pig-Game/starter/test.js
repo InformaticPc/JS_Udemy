@@ -17,6 +17,7 @@ switch (PLAYER_1.classList.contains('player--active')) {
       //AND SWICH PLAYER
       PLAYER_2.classList.remove('player--active');
       PLAYER_1.classList.add('player--active');
+      // --------->
     }
     break;
 }
@@ -43,6 +44,6 @@ switch (PLAYER_1.classList.contains('player--active')) {
       PLAYER_1.classList.add('player--active');
     }
   }
-  //What happen if theres no active player class
   //this code repeats make refactor######## ↑
+  //What happen if theres no active player class
  */

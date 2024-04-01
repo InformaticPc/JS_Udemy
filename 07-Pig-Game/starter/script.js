@@ -5,6 +5,7 @@ const BODY = document.querySelector('body');
 //BUTTONS
 const ROLL_DICE_BT = document.querySelector('.btn--roll');
 const HOLD_BT = document.querySelector('.btn--hold');
+const NEW_GAME_BT = document.querySelector('.btn--new');
 //Active player
 const PLAYER_ACTIVE = document.querySelector('.player--active');
 
@@ -21,13 +22,19 @@ const CURRENT_2 = document.querySelector('#current--1');
 //Score of players variables
 let player_1_Score;
 let player_2_Score;
-
-//Begin state
-SCORE_PLAYER_1.textContent = 0;
-SCORE_PLAYER_2.textContent = 0;
-DICE.classList.add('hidden'); // This class isn't in html file by default
-player_1_Score = 0;
-player_2_Score = 0;
+//----------------------
+/**Begin state*/
+function start() {
+  SCORE_PLAYER_1.textContent = 0;
+  SCORE_PLAYER_2.textContent = 0;
+  player_1_Score = 0;
+  player_2_Score = 0;
+  CURRENT_1.textContent = 0;
+  CURRENT_2.textContent = 0;
+  DICE.classList.add('hidden');
+}
+start();
+//----------------------
 
 /**CREATE RANDOM NUMBER */
 const CREATE_RANDOM_NUMBER = function () {
@@ -54,7 +61,7 @@ const CALC_SCORE = function (playeScore, sum) {
   return (score += sum);
 };
 
-/**SPACE KEY PRESSED*/
+/**'R' KEY PRESSED*/
 BODY.addEventListener('keydown', function (event) {
   console.log('SHOW KEY PRESSED : ' + event.code);
   if (event.code === 'KeyR') {
@@ -116,18 +123,33 @@ HOLD_BT.addEventListener('click', function (event) {
   if (PLAYER_1.classList.contains('player--active')) {
     player_1_Score += Math.trunc(CURRENT_1.textContent);
     SCORE_PLAYER_1.textContent = player_1_Score;
-    PLAYER_1.classList.toggle('player--active');
-    PLAYER_2.classList.toggle('player--active');
-    CURRENT_1.textContent = 0;
+    //If this player reachs >=100 wins
+    if (player_1_Score >= 100) {
+      //PLAYER WINS!! CHANGE VIEW AND ONLY POSIBLE TO RESTART THE GAME
+    } else {
+      PLAYER_1.classList.toggle('player--active');
+      PLAYER_2.classList.toggle('player--active');
+      CURRENT_1.textContent = 0;
+    }
   }
   //OTHER PLAYER
   else if (PLAYER_2.classList.contains('player--active')) {
     player_2_Score += Math.trunc(CURRENT_2.textContent);
     SCORE_PLAYER_2.textContent = player_2_Score;
-    PLAYER_2.classList.toggle('player--active');
-    PLAYER_1.classList.toggle('player--active');
-    CURRENT_2.textContent = 0;
+    //If this player reachs >=100 wins
+    if (player_2_Score >= 100) {
+      //PLAYER WINS!! CHANGE VIEW AND ONLY POSIBLE TO RESTART THE GAME
+    } else {
+      PLAYER_2.classList.toggle('player--active');
+      PLAYER_1.classList.toggle('player--active');
+      CURRENT_2.textContent = 0;
+    }
   }
+});
+
+/**NEW GAME BUTTON EVENT */
+NEW_GAME_BT.addEventListener('click', function (event) {
+  start();
 });
 
 /**Take the apropiate picture for the random number given */
