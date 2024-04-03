@@ -123,7 +123,7 @@ HOLD_BT.addEventListener('click', function (event) {
   if (PLAYER_1.classList.contains('player--active')) {
     player_1_Score += Math.trunc(CURRENT_1.textContent);
     SCORE_PLAYER_1.textContent = player_1_Score;
-    //If this player reachs >=100 wins
+    /**If this player reachs >=100 wins*/
     if (player_1_Score >= 100) {
       //PLAYER WINS!! CHANGE VIEW AND ONLY POSIBLE TO RESTART THE GAME
     } else {
@@ -136,7 +136,7 @@ HOLD_BT.addEventListener('click', function (event) {
   else if (PLAYER_2.classList.contains('player--active')) {
     player_2_Score += Math.trunc(CURRENT_2.textContent);
     SCORE_PLAYER_2.textContent = player_2_Score;
-    //If this player reachs >=100 wins
+    /**If this player reachs >=100 wins*/
     if (player_2_Score >= 100) {
       //PLAYER WINS!! CHANGE VIEW AND ONLY POSIBLE TO RESTART THE GAME
     } else {
