@@ -22,6 +22,10 @@ const CURRENT_2 = document.querySelector('#current--1');
 //Score of players variables
 let player_1_Score;
 let player_2_Score;
+
+//Modal WINNER
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
 //----------------------
 /**Begin state*/
 function start() {
@@ -35,7 +39,23 @@ function start() {
 }
 start();
 //----------------------
+/**Funtion to open the winner modal */
+function win() {
+  overlay.classList.remove('hidden');
+  modal.classList.remove('hidden');
+}
+/**FUNCTION TO CLOSE THE MODAL or add the hidden class*/
+const CLOSE_MODAL = function () {
+  MODAL.classList.add('hidden');
+  OVERLAY.classList.add('hidden');
+};
+/**Events to close the modal **********
+ * need query the button and add the event listener:
+ * BTNS_CloseModal.addEventListener('click', CLOSE_MODAL);
+ * OVERLAY.addEventListener('click', CLOSE_MODAL);
+ */
 
+//----------------------
 /**CREATE RANDOM NUMBER */
 const CREATE_RANDOM_NUMBER = function () {
   return Math.trunc(Math.random() * 6) + 1;
@@ -90,6 +110,7 @@ BODY.addEventListener('keydown', function (event) {
     //this code repeats make refactor######## ↑
   }
 });
+
 /**ROLL DICE BUTTON PRESSED*/
 ROLL_DICE_BT.addEventListener('click', function (event) {
   console.log(event.type);
@@ -124,8 +145,9 @@ HOLD_BT.addEventListener('click', function (event) {
     player_1_Score += Math.trunc(CURRENT_1.textContent);
     SCORE_PLAYER_1.textContent = player_1_Score;
     /**If this player reachs >=100 wins*/
-    if (player_1_Score >= 100) {
+    if (player_1_Score > 10) {
       //PLAYER WINS!! CHANGE VIEW AND ONLY POSIBLE TO RESTART THE GAME
+      win();
     } else {
       PLAYER_1.classList.toggle('player--active');
       PLAYER_2.classList.toggle('player--active');
@@ -139,6 +161,7 @@ HOLD_BT.addEventListener('click', function (event) {
     /**If this player reachs >=100 wins*/
     if (player_2_Score >= 100) {
       //PLAYER WINS!! CHANGE VIEW AND ONLY POSIBLE TO RESTART THE GAME
+      win();
     } else {
       PLAYER_2.classList.toggle('player--active');
       PLAYER_1.classList.toggle('player--active');
