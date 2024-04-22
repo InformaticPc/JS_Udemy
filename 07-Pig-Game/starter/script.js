@@ -1,11 +1,15 @@
 'use strict';
+
 //Selecting elements
 const DICE = document.querySelector('.dice');
 const BODY = document.querySelector('body');
+
 //BUTTONS
 const ROLL_DICE_BT = document.querySelector('.btn--roll');
 const HOLD_BT = document.querySelector('.btn--hold');
 const NEW_GAME_BT = document.querySelector('.btn--new');
+const CLOSE_BT = document.querySelector('.close-modal');
+
 //Active player
 const PLAYER_ACTIVE = document.querySelector('.player--active');
 
@@ -24,8 +28,8 @@ let player_1_Score;
 let player_2_Score;
 
 //Modal WINNER
-const modal = document.querySelector('.modal');
-const overlay = document.querySelector('.overlay');
+const MODAL = document.querySelector('.modal');
+const OVERLAY = document.querySelector('.overlay');
 //----------------------
 /**Begin state*/
 function start() {
@@ -41,13 +45,14 @@ start();
 //----------------------
 /**Funtion to open the winner modal */
 function win() {
-  overlay.classList.remove('hidden');
-  modal.classList.remove('hidden');
+  OVERLAY.classList.remove('hidden');
+  MODAL.classList.remove('hidden');
 }
-/**FUNCTION TO CLOSE THE MODAL or add the hidden class*/
+/**FUNCTION TO CLOSE THE MODAL AND RESTART GAME*/
 const CLOSE_MODAL = function () {
   MODAL.classList.add('hidden');
   OVERLAY.classList.add('hidden');
+  start();
 };
 /**Events to close the modal **********
  * need query the button and add the event listener:
@@ -145,7 +150,7 @@ HOLD_BT.addEventListener('click', function (event) {
     player_1_Score += Math.trunc(CURRENT_1.textContent);
     SCORE_PLAYER_1.textContent = player_1_Score;
     /**If this player reachs >=100 wins*/
-    if (player_1_Score > 10) {
+    if (player_1_Score >= 100) {
       //PLAYER WINS!! CHANGE VIEW AND ONLY POSIBLE TO RESTART THE GAME
       win();
     } else {
@@ -171,9 +176,10 @@ HOLD_BT.addEventListener('click', function (event) {
 });
 
 /**NEW GAME BUTTON EVENT */
-NEW_GAME_BT.addEventListener('click', function (event) {
-  start();
-});
+NEW_GAME_BT.addEventListener('click', start);
+
+/**CLOSE WINNER MESSAGE */
+CLOSE_BT.addEventListener('click', CLOSE_MODAL);
 
 /**Take the apropiate picture for the random number given */
 const DICE_NUMBER = function (rndNumber) {
@@ -212,9 +218,10 @@ const DICE_NUMBER = function (rndNumber) {
 /**
  * [x] SUM POINTS TO CURRENT SCORE
  * [x] RESTART ON 0 IF DICE=1 & SWITCH ACTIVE PLAYER
- * [ ] NEW GAME BUTTON
+ * [X] NEW GAME BUTTON
  * [ ] ADD A COUNTER OF HOW MANY ROUNDS YOU CHOOSE TO PLAY
- * [ ] ADD A WINNER MESSAGE
- * [ ] ADD SECTION INSTRUCTIONS OF GAMEPLAY
+ * [X] ADD A WINNER MESSAGE
+ * [X] ADD SECTION INSTRUCTIONS OF GAMEPLAY
+ * [X] ADD AFTER WINNER MESSAGE CLOSE IT AND RESETART GAME
  * [ ] REFACTOR CODE
  */
