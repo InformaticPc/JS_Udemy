@@ -1,0 +1,43 @@
+/* To call all the elements use ' * ' */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*check in MDN what this dous*/
+}
+
+body {
+  /* this are properties */
+  background-color: teal;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 30px;
+  padding: 15px;
+}
+img {
+  width: 600px;
+}
+a {
+  color: aqua;
+}
+
+/* To call class use '.' */
+.first {
+  color: antiquewhite;
+}
+.second {
+  font-size: larger;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+/* To call ID use ' #' */
+#box1-form {
+  background-color: aquamarine;
+  border: 2px solid salmon;
+  padding: 10px;
+  width: 500px;
+  margin: 20px 0px;
+}
+
+hr {
+  color: azure;
+  margin: 20px 0;
+}
