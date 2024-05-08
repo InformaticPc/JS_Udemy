@@ -1,80 +1,7 @@
 'use strict';
+
 /**
-  // Data needed for a later exercise
-  const flights =
-    '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
-
-  // Data needed for first part of the section
-  const restaurant = {
-    name: 'Classico Italiano',
-    location: 'Via Angelo Tavanti 23, Firenze, Italy',
-    categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-    starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-    mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-
-    /**FUNCTION WILL ACCEPT INDEX OF  [starterMenu, mainMenu]/
-    order: function (starterIndex, mainIndex) {
-      return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-    },
-
-    openingHours: {
-      thu: {
-        open: 12,
-        close: 22,
-      },
-      fri: {
-        open: 11,
-        close: 23,
-      },
-      sat: {
-        open: 0, // Open 24 hours
-        close: 24,
-      },
-    },
-  };
-
-  let [one, two] = restaurant.starterMenu;
-  let [first, , , four] = restaurant.categories; //creating empty reference in the array it will skip those index
-
-  console.log(first, four);
-  console.log(one, two);
-
-  // A way to change/swap the order of values
-  console.log('-------A WAY TO SWAP value CREATING TEMP VARIABLE-------');
-  const temp = one;
-  one = two;
-  two = temp;
-  console.log(one, two);
-  //-----------------------------------
-  // DESTRUCTURING
-  console.log('-------AFTER DESTRUCTURING swapping reference value-------');
-  [first, , , four] = [four, , , first];
-  console.log(first, four);
-  //-----------------------------------
-  // DESTRUCTURING FROM METHOD OBJECT
-  console.log('-------FROM METHOD OBJECT YOU GET THE ARRAY AS OUTPUT-------');
-  console.log(restaurant.order(0, 2)); // HERE WE GOT AN ARRAY AS OUTPUT
-  console.log('-------AFTER DESTRUCTURING FROM METHOD OBJECT-------');
-  const [STARTED, MAIN] = restaurant.order(0, 2); // HERE YOU CREATE TO CONST AT ONECE [CONST STARTED | CONST MAIN]
-  console.log(STARTED, MAIN);
-
-  //-----------------------------------
-  console.log('-------NESETD ARRAY-------');
-  const nestedArr = [2, 4, [5, 6]];
-  const [i, , j] = nestedArr; //THE 2ND INDEX IN ANOTHER ARRAY
-  console.log(i, j);
-  console.log('-------DESTRUCTURING NESETD ARRAY-------');
-  const [x, , [z, y]] = nestedArr;
-  console.log(i, z, y);
-  //-----------------------------------
-  console.log('-------SHORT SUMMARY(check code)-------');
-  const [a, b, c, d] = [2, 3, 4];
-  console.log(a, b, c, d); //OUTPUT: 2 3 4 undefined
-  console.log(
-    '-------We can even PREdefine values before we destructe the array-------'
-  );
-  const [e = 1, f = 1, g = 1, h = 1] = [2, 3];
-  console.log(e, f, g, h); //OUTPUT: 2 3 1 1
+ 
 */
 
 /** Below you can find data used in the assignments;
@@ -295,6 +222,7 @@ const books = [
     pages: 296,
     format: 'hardcover',
     ISBN: '9781455586691',
+    year: '2011',
     language: 'English',
     thirdParty: {
       goodreads: {
@@ -308,37 +236,97 @@ const books = [
     highlighted: true,
   },
 ];
+// 2.1 BASIC DESTRUCTURE OBJECT
+// Destructure the first book object from the books array into variables called title, author and ISBN.
 
-/**DESTRUCTURING ARRAYS */
-//Destructure the books array into two variables called firstBook and secondBook
-// 1.1
-const [firstBook, secondBook] = books;
-console.log(firstBook);
-console.log('-----------');
-console.log(secondBook);
+const { title, author, ISBN } = books[0]; //to take the desired properties only need to call by his property name
+console.log(`Title: ${title} Author: ${author} ISBN: ${ISBN}`);
 
-// Destructure the books array into a variable called thirdBook. You must skip the first two books.
-// 1.2
-console.log('___________________________');
-const [, , thirdBook] = books;
-console.log('THIRD BOOK:');
-console.log(thirdBook);
+// 2.2 GIVE DIFF PROPERTY NAME
+// Each book object has the keywords property.
+// Destructure the first book object from the books array into a variable called tags.
+// The tags variable should be assigned with the value of the keywords property.
+console.log('__________________________');
+const { keywords: tags } = books[0]; //to copy the property value and give a diff variable name
+console.log(tags);
 
-// Below is the nested ratings array that contains two other arrays.
-// Destructure the nested ratings arrays into two variables called rating and ratingsCount.
-// In the result of your destructuring, the ratings variable should store a number 4.19, and the ratingsCount variable should store a number 144584.
-// 1.3
-console.log('___________________________');
-const ratings = [
-  ['rating', 4.19],
-  ['ratingsCount', 144584],
-];
-const [[, rating], [, ratingsCount]] = ratings;
-console.log('rating: ' + rating);
-console.log('ratingCount: ' + ratingsCount);
+// 2.3 Default value
+// The seventh book from the books array is missing the programmingLanguage property.
+// Destructure the seventh book object (books[6]) into variables called language and programmingLanguage.
+// Assign the programmingLanguage variable with a default value of 'unknown'.
+console.log('__________________________');
+const { title: CAPTION, language, programmingLanguage = 'unknow' } = books[6];
+console.log(
+  `Title: ${CAPTION} language: ${language} programmingLanguage: ${programmingLanguage}`
+);
 
-// Below is the ratingStars array.
-// Destructure it into three variables called fiveStarRatings, oneStarRatings and threeStarRatings.
-// Assign the threeStarRatings variable with a default value of 0.
+// 2.4 Reassign Objects ' ({})= x '
+// Below are two variables called bookTitle and bookAuthor.
+// Reassign them with the values of the title and author properties of the first book object from the books array.
 
-const ratingStars = [63405, 1808];
+console.log('__________________________');
+let bookTitle = 'unknown';
+let bookAuthor = 'unknown';
+
+({ title: bookTitle } = books[0]); // ⚠️need to envolved by parentesis cause '{}' means a code block and code block can't be assign to anything so: '({})'⚠️
+({ author: bookAuthor } = books[0]);
+console.log(`Reassign title: ${bookTitle} and Author: ${bookAuthor}`);
+
+// 2.5 NESTED OBJECTS
+// Each book object has a deeply nested rating property as illustrated below:
+/*
+{
+  title: 'Algorithms',
+  ...
+  thirdParty: {
+    goodreads: {
+      rating: 4.41,              // <-- HERE
+      ratingsCount: 1733,
+      reviewsCount: 63,
+      fiveStarRatingCount: 976,
+      oneStarRatingCount: 13
+    }
+  }
+},
+*/
+// Destructure the first book object from the books array into a variable called bookRating.
+// In the result of your destructuring, the bookRating variable should be assigned with the value of the book[0].thirdParty.goodreads.rating property.
+
+// Please do most of the work on the left side of the assignment operator: const ... = books[0];
+console.log('__________________________');
+const {
+  thirdParty: {
+    goodreads: { rating: bookRating },
+  },
+} = books[0];
+console.log(bookRating);
+
+// 2.6
+// Write a function called printBookInfo that has three parameters called title, author and year.
+// This function should work for a single object passed as an argument,
+// and it should log to the console information about the book in this format: "${title} by ${author}, ${year}".
+
+// If year is undefined (was not passed), it should be assigned with a default value of 'year unknown'.
+
+console.log('__________________________');
+/*
+Code:
+printBookInfo({ title: 'Algorithms', author: 'Robert Sedgewick', year: '2011' });
+
+Expected output:
+"Algorithms by Robert Sedgewick, 2011" 
+*/
+
+/*
+Code (missing year):
+printBookInfo({ title: 'Algorithms', author: 'Robert Sedgewick' });
+
+Expected output:
+"Algorithms by Robert Sedgewick, year unknown"
+*/
+function printBookInfo(OBJ) {
+  const { title, author, year = 'year unknown' } = OBJ;
+  console.log(`${title} by ${author}, ${year} `);
+}
+
+printBookInfo(books[books.length - 1]);
