@@ -44,7 +44,12 @@ const books = [
       },
     },
     highlighted: true,
+
+    printBookInfo: function ({ title, author, year = 'year unknown' }) {
+      console.log(`${title} by ${author}, ${year}`);
+    },
   },
+
   {
     title: 'Structure and Interpretation of Computer Programs',
     author: [
@@ -324,9 +329,16 @@ printBookInfo({ title: 'Algorithms', author: 'Robert Sedgewick' });
 Expected output:
 "Algorithms by Robert Sedgewick, year unknown"
 */
-function printBookInfo(OBJ) {
-  const { title, author, year = 'year unknown' } = OBJ;
-  console.log(`${title} by ${author}, ${year} `);
-}
+/** 
+ *function printBookInfo(OBJ) {
+    const { title, author, year = 'year unknown' } = OBJ;
+    console.log(`${title} by ${author}, ${year} `);
+  }
 
-printBookInfo(books[books.length - 1]);
+  printBookInfo(books[books.length - 1]);
+ */
+books[0].printBookInfo({
+  title: 'Algorithms',
+  author: 'Robert Sedgewick',
+  // year: '2011',
+});
