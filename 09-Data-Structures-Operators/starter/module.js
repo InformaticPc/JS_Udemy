@@ -1,18 +1,6 @@
 'use strict';
 
-/**
- 
-*/
-
-/** Below you can find data used in the assignments;
- *     It's an array of books related to computer science, math and business;
- *     Each book is represented by an object;
- *     Missing properties, different data types for same properties or duplicates are intentional;
- *     Copy this data to your code editor, and give yourself some time to familiarize with it before you start working on assignments.
- *      https://codingheroes.io/assignments/destructuring-arrays#1-4
- *     note: Make sure to comment out the code from previous assignments if you continue in the same file. */
-
-const books = [
+export const books = [
   {
     title: 'Algorithms',
     author: ['Robert Sedgewick', 'Kevin Wayne'],
@@ -45,12 +33,7 @@ const books = [
       },
     },
     highlighted: true,
-
-    printBookInfo: function ({ title, author, year = 'year unknown' }) {
-      console.log(`${title} by ${author}, ${year}`);
-    },
   },
-
   {
     title: 'Structure and Interpretation of Computer Programs',
     author: [
@@ -228,7 +211,6 @@ const books = [
     pages: 296,
     format: 'hardcover',
     ISBN: '9781455586691',
-    year: '2011',
     language: 'English',
     thirdParty: {
       goodreads: {
@@ -242,104 +224,3 @@ const books = [
     highlighted: true,
   },
 ];
-// 2.1 BASIC DESTRUCTURE OBJECT
-// Destructure the first book object from the books array into variables called title, author and ISBN.
-
-const { title, author, ISBN } = books[0]; //to take the desired properties only need to call by his property name
-console.log(`Title: ${title} Author: ${author} ISBN: ${ISBN}`);
-
-// 2.2 GIVE DIFF PROPERTY NAME
-// Each book object has the keywords property.
-// Destructure the first book object from the books array into a variable called tags.
-// The tags variable should be assigned with the value of the keywords property.
-console.log('__________________________');
-const { keywords: tags } = books[0]; //to copy the property value and give a diff variable name
-console.log(tags);
-
-// 2.3 Default value
-// The seventh book from the books array is missing the programmingLanguage property.
-// Destructure the seventh book object (books[6]) into variables called language and programmingLanguage.
-// Assign the programmingLanguage variable with a default value of 'unknown'.
-console.log('__________________________');
-const { title: CAPTION, language, programmingLanguage = 'unknow' } = books[6];
-console.log(
-  `Title: ${CAPTION} language: ${language} programmingLanguage: ${programmingLanguage}`
-);
-
-// 2.4 Reassign Objects ' ({})= x '
-// Below are two variables called bookTitle and bookAuthor.
-// Reassign them with the values of the title and author properties of the first book object from the books array.
-
-console.log('__________________________');
-let bookTitle = 'unknown';
-let bookAuthor = 'unknown';
-
-({ title: bookTitle } = books[0]); // ⚠️need to envolved by parentesis cause '{}' means a code block and code block can't be assign to anything so: '({})'⚠️
-({ author: bookAuthor } = books[0]);
-console.log(`Reassign title: ${bookTitle} and Author: ${bookAuthor}`);
-
-// 2.5 NESTED OBJECTS
-// Each book object has a deeply nested rating property as illustrated below:
-/*
-{
-  title: 'Algorithms',
-  ...
-  thirdParty: {
-    goodreads: {
-      rating: 4.41,              // <-- HERE
-      ratingsCount: 1733,
-      reviewsCount: 63,
-      fiveStarRatingCount: 976,
-      oneStarRatingCount: 13
-    }
-  }
-},
-*/
-// Destructure the first book object from the books array into a variable called bookRating.
-// In the result of your destructuring, the bookRating variable should be assigned with the value of the book[0].thirdParty.goodreads.rating property.
-
-// Please do most of the work on the left side of the assignment operator: const ... = books[0];
-console.log('__________________________');
-const {
-  thirdParty: {
-    goodreads: { rating: bookRating },
-  },
-} = books[0];
-console.log(bookRating);
-
-// 2.6
-// Write a function called printBookInfo that has three parameters called title, author and year.
-// This function should work for a single object passed as an argument,
-// and it should log to the console information about the book in this format: "${title} by ${author}, ${year}".
-
-// If year is undefined (was not passed), it should be assigned with a default value of 'year unknown'.
-
-console.log('__________________________');
-/*
-Code:
-printBookInfo({ title: 'Algorithms', author: 'Robert Sedgewick', year: '2011' });
-
-Expected output:
-"Algorithms by Robert Sedgewick, 2011" 
-*/
-
-/*
-Code (missing year):
-printBookInfo({ title: 'Algorithms', author: 'Robert Sedgewick' });
-
-Expected output:
-"Algorithms by Robert Sedgewick, year unknown"
-*/
-/** 
- *function printBookInfo(OBJ) {
-    const { title, author, year = 'year unknown' } = OBJ;
-    console.log(`${title} by ${author}, ${year} `);
-  }
-
-  printBookInfo(books[books.length - 1]);
- */
-books[0].printBookInfo({
-  title: 'Algorithms',
-  author: 'Robert Sedgewick',
-  // year: '2011',
-});
