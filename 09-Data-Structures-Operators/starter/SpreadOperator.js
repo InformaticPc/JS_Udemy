@@ -35,3 +35,5 @@ function spellWord(str) {
 }
 
 spellWord('what ever');
+//  SPREAD PATTERN NEEDS TO BE AFTER/RIGHT SIDE OF ASSIGNMENT OPERATOR '[] = ...spread '
+// REST PATTERN ON THE LEFT SIDE ' ...rest = []'
