@@ -76,30 +76,43 @@ console.log(`🥅 GOALKEEPER: ${gk}`);
 console.log(fieldPlayers);
 
 // Create an array 'allPlayers' containing all players of both teams (22 players)
-const [...allPlayers] = [...players1, ...players2];
+console.log('####all PLAYERS####');
+const allPlayers = [...players1, ...players2];
 console.log(allPlayers);
 
 // create a new array ('players1Final') containing all the original team1 players plus 'Thiago', 'Coutinho' and 'Perisic'
+console.log('####PLAYERS 1 FINAL (+ 3 PLAYERS)####');
 const [...players1Final] = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
 console.log(players1Final);
 
 // Based on the game.odds object, create one variable for each odd (called 'team1', 'draw' and 'team2')
+console.log('####TEAMS STATS####');
 const { team1, x: draw, team2 } = game.odds; //REMEMBER: in obj you need to call their property name. (in this case 'x:draw') we are changing 'x' name property to -> 'draw'
 console.log(team1);
 console.log(draw);
 console.log(team2);
+/* another way to choose teams from odds
+  const {odds: {team1, x: draw, team2}} = game;<-- just refer to the parent obj and with curly brakets select subObjects
+*/
 
 // Write a function ('printGoals') that receives an arbitrary number of player names (NOT an array)
 // TEST DATA FOR 6: Use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'. Then, call the function again with players from game.scored
+console.log('####PRINT PLAYERS ALONG WITH THEIR NUMBER OF GOALS####');
 function printGoals(...players) {
   // prints each of them to the console, along with the number of goals that were scored in total (number of player names passed in)
   players.forEach(player => {
     console.log(player);
   });
+  console.log('☝️ Scored👆 in total by them was: ' + players.length);
 }
 printGoals('caca', 'etoh', 'Ronaldinho');
 printGoals(...game.scored);
 
 // team with the lower odd is more likely to win. Print to the console which team is more likely to win
 // WITHOUT using an if/else statement or the ternary operator.
+// team1 < team2
 /**CHECK NOTES */
+console.log('####lower odd is more likely to win####');
+const check = team1 < team2;
+console.log(`team2 greater than team2: ${check}`);
+console.log(team1 < team2 && 'Team 2T is the winner');
