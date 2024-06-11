@@ -80,7 +80,7 @@ console.log('✅=======================⏬');
 // NULLISH: NULL AND UNDEFINED (NOT 0 OR "" <- falsy values)
 const testting = 0;
 
-const NULLISH = testting ?? 10; // onlyt if testing is NULL/UNDEFINED will return the second evaluation
+const NULLISH = testting ?? 10; // onlyt if testing is NULL/UNDEFINED will return the second evaluation like 'AND'
 console.log(NULLISH);
 
 const orOperator = testting || 10;
