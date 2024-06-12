@@ -23,7 +23,7 @@ books.forEach(book => {
 console.log('##########');
 books.forEach(book => {
   //   book.highlighted &&= console.log(`Title: ${book.title}`);
-  book.highlighted ?? console.log(`❌Title: ${book.title}❌`); //this checks if 'highlighted property' exist
+  book.highlighted ?? console.log(`❌Title: ${book.title}❌`); //this checks if 'highlighted property' doesn't exist
   book.highlighted && console.log(`✅Title: ${book.title}✅`); //this checks if CONTAINS (highlighted property)
   //   later it will change the value to false.
   book.highlighted &&= !(book.thirdParty.goodreads.rating < 4.2);
