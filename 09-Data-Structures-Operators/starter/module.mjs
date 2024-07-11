@@ -1,5 +1,5 @@
 'use strict';
-// 
+//
 export const books = [
   {
     title: 'Algorithms',
@@ -25,7 +25,7 @@ export const books = [
     onlineContent: true,
     thirdParty: {
       goodreads: {
-        rating: 4.41,
+        rating: [4.41, 545], // I modifed this to understand Object.entries() static method. Should be only '4.41'
         ratingsCount: 1733,
         reviewsCount: 63,
         fiveStarRatingCount: 976,
