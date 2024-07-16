@@ -123,8 +123,13 @@ return array of values???: 4.41,545,1733,63,976,13
 // 11.3
 // Use the Object.entries() method on the thirdParty.goodreads property of the first book from the books array. Assign the returned value to the variable called entries2.
 // ...
-
+console.log('### 11.3 ###');
+const entries2 = Object.entries(books[0].thirdParty.goodreads);
+console.log(entries2);
 //
 // 11.4
 // Log the entries and entries2 variables to the console, and compare them. They should look the same.
 // ...
+console.log('### 11.4 ###');
+console.log(`Entries2: ${entries2} \n ENTRIES: ${entries}`);
+j;
