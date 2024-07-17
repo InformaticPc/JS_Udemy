@@ -93,19 +93,110 @@ function explanatoryCode_2() {
 explanatoryCode_1();
 explanatoryCode_2();
 /* OUTPUT:
-TEST#######################T
-property_values: 4.41,545
+what is "keys"?: rating
+what is "keys"?: ratingsCount
+what is "keys"?: reviewsCount
+what is "keys"?: fiveStarRatingCount
+what is "keys"?: oneStarRatingCount
+Object.keys(array/obj)
+[
+  [ 'rating' ],
+  [ 'ratingsCount' ],
+  [ 'reviewsCount' ],
+  [ 'fiveStarRatingCount' ],
+  [ 'oneStarRatingCount' ]
+]
+SHOW ME NOW HOW .entries() METHOD LOOKS LIEK IN entries[] array
+ 0,rating
+SHOW ME NOW HOW .entries() METHOD LOOKS LIEK IN entries[] array
+ 1,ratingsCount
+SHOW ME NOW HOW .entries() METHOD LOOKS LIEK IN entries[] array
+ 2,reviewsCount
+SHOW ME NOW HOW .entries() METHOD LOOKS LIEK IN entries[] array
+ 3,fiveStarRatingCount
+SHOW ME NOW HOW .entries() METHOD LOOKS LIEK IN entries[] array
+ 4,oneStarRatingCount
+#######################
+what is property it self?:  0
+proper= rating value= 4.41,545
+[ 'rating', [ 4.41, 545 ] ]
+what is property it self?:  1
+proper= ratingsCount value= 1733
+[ 'ratingsCount', 1733 ]
+what is property it self?:  2
+proper= reviewsCount value= 63
+[ 'reviewsCount', 63 ]
+what is property it self?:  3
+proper= fiveStarRatingCount value= 976
+[ 'fiveStarRatingCount', 976 ]
+what is property it self?:  4
+proper= oneStarRatingCount value= 13
+[ 'oneStarRatingCount', 13 ]
+TEST#######################
+----------EXPLANATORY CODE 1----------
 Entries:
-prop: rating,4.41,545
-value: 4.41
+index:
+0
+prop:
+[ [ 'rating', [ 4.41, 545 ] ] ]
+value:
+undefined
+ARRAY TO RETURN: rating,4.41,545
 Entries:
-prop: ratingsCount,1733
-value: 545
-property_values: 1733
-property_values: 63
-property_values: 976
-property_values: 13
-return array of values???: 4.41,545,1733,63,976,13
+index:
+1
+prop:
+[ [ 'ratingsCount', 1733 ] ]
+value:
+undefined
+ARRAY TO RETURN: rating,4.41,545,ratingsCount,1733
+Entries:
+index:
+2
+prop:
+[ [ 'reviewsCount', 63 ] ]
+value:
+undefined
+ARRAY TO RETURN: rating,4.41,545,ratingsCount,1733,reviewsCount,63
+Entries:
+index:
+3
+prop:
+[ [ 'fiveStarRatingCount', 976 ] ]
+value:
+undefined
+ARRAY TO RETURN: rating,4.41,545,ratingsCount,1733,reviewsCount,63,fiveStarRatingCount,976
+Entries:
+index:
+4
+prop:
+[ [ 'oneStarRatingCount', 13 ] ]
+value:
+undefined
+ARRAY TO RETURN: rating,4.41,545,ratingsCount,1733,reviewsCount,63,fiveStarRatingCount,976,oneStarRatingCount,13
+loop FINISHED ------------
+----------EXPLANATORY CODE 2----------
+prop:
+rating
+ value:
+4.41,545
+prop:
+ratingsCount
+ value:
+1733
+prop:
+reviewsCount
+ value:
+63
+prop:
+fiveStarRatingCount
+ value:
+976
+prop:
+oneStarRatingCount
+ value:
+13
+loop FINISHED ------------
 */
 /**
  * UNDERSTOOD: SO 'entries[property]'  IS ALREADY AN ARRAY CRATED IN THE 1ST EXERCISE*/
