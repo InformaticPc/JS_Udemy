@@ -19,7 +19,7 @@ export const books = [
     ],
     pages: 976,
     format: 'hardcover',
-    ISBN: '9780321573513',
+    ISBN: '2157397803513',
     language: 'English',
     programmingLanguage: 'Java',
     onlineContent: true,
@@ -203,7 +203,7 @@ export const books = [
   },
   {
     title: 'Deep Work: Rules for Focused Success in a Distracted World',
-    author: 'Cal Newport',
+    author: 'Cal Newport (Contributor)',
     publisher: 'Grand Central Publishing',
     publicationDate: '2016-01-05',
     edition: 1,
