@@ -25,7 +25,7 @@ export const books = [
     onlineContent: true,
     thirdParty: {
       goodreads: {
-        rating: [4.41, 545], // I modifed this to understand Object.entries() static method. Should be only '4.41'
+        rating: 4.41,
         ratingsCount: 1733,
         reviewsCount: 63,
         fiveStarRatingCount: 976,
@@ -36,21 +36,11 @@ export const books = [
   },
   {
     title: 'Structure and Interpretation of Computer Programs',
-    author: [
-      'Harold Abelson',
-      'Gerald Jay Sussman',
-      'Julie Sussman (Contributor)',
-    ],
+    author: ['Harold Abelson', 'Gerald Jay Sussman', 'Julie Sussman (Contributor)'],
     publisher: 'The MIT Press',
     publicationDate: '2022-04-12',
     edition: 2,
-    keywords: [
-      'computer science',
-      'programming',
-      'javascript',
-      'software',
-      'engineering',
-    ],
+    keywords: ['computer science', 'programming', 'javascript', 'software', 'engineering'],
     pages: 640,
     format: 'paperback',
     ISBN: '9780262543231',
@@ -70,7 +60,7 @@ export const books = [
   },
   {
     title: "Computer Systems: A Programmer's Perspective",
-    author: ['Randal E. Bryant', "David Richard O'Hallaron"],
+    author: ['Randal E. Bryant', "David Richard O'Hallaron (Contributor)"],
     publisher: 'Prentice Hall',
     publicationDate: '2002-01-01',
     edition: 1,
