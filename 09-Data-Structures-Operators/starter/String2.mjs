@@ -18,24 +18,25 @@ Expected output:
 "Julie Sussman"
 */
 
+/**
 const dfjh = ' slKjF dfS ';
 
 console.log(typeof dfjh);
 console.log(dfjh.toLowerCase() + 'hello'); // to removes all uppercases
-console.log(dfjh.trim().trimEnd() + 'hello'); // to removes white spaces from beginning and end
-const normalString = dfjh;
-console.log(normalString);
-console.log(typeof dfjh);
-
-dfjh.rep;
+console.log(dfjh.trim() + 'hello'); // to removes white spaces from beginning and end
+*/
 
 function normalizeAuthorName(name) {
-  const isContributor = name.indexOf('(Contributor)'); // returns the index of 'contributor' if exist
-  console.log(isContributor);
-  const normalWord = name.slice(0, isContributor).trim(); // to removes 'contributor' at the end of phrases
+  const normalWord = name.trim().toLowerCase();
   console.log(normalWord);
+  const indexContributor = normalWord.indexOf('(contributor)'); // returns the index of 'contributor' if exist
+  const cleanName = normalWord.slice(0, indexContributor - 1); // to removes 'contributor' at the end of phrases
+  console.log(cleanName);
 
   //   const upperIndexes =
+  const str = 'aloha';
+ y5 console.log(str.replace(str[0], str[0].toLocaleUpperCase()));
+  
 }
 
 normalizeAuthorName('  JuliE sussMan (Contributor)');
