@@ -17,21 +17,40 @@ normalizeAuthorName('  JuliE sussMan (Contributor)')
 Expected output:
 "Julie Sussman"
 */
-
+console.log('=================16.1=================');
+/**
+ * Function to normalize Names in Pascal case
+ * @param {string} name
+ */
 function normalizeAuthorName(name) {
   const normalWord = name.trim().toLowerCase(); // removes first and last empty spaces ' ' if exist
+  console.log('## Remove empty spaces ##');
   console.log(normalWord);
   const indexContributor = normalWord.indexOf('(contributor)'); // returns the index of 'contributor' if exist
   const cleanName = normalWord.slice(0, indexContributor - 1); // to removes 'contributor' at the end of phrases
+  console.log('## Removed contributor ##');
   console.log(cleanName);
 
   // Transform to uppercase each name.
   name = cleanName.replace(cleanName[0], cleanName[0].toLocaleUpperCase());
+  console.log('## First name Fixed ##');
   console.log(name); // uppercase 1st character
   const indexSurName = cleanName.indexOf(' ') + 1;
   name = name.replace(name[indexSurName], name[indexSurName].toLocaleUpperCase());
   // uppercase 2nd character
+  console.log('## ALL Name fixed ✅ ##');
   console.log(name);
 }
 
 normalizeAuthorName('  JuliE sussMan (Contributor)');
+
+// =============================================================================
+// 16.2
+// Take the title of the second book (books[1]) from the books array,
+// and replace the word "Programs" with "Software".
+// Assign the new string to the newBookTitle variable.
+console.log('=================16.2=================');
+console.log(books[1].title);
+const newBookTitle = books[1].title.replace('Programs', 'Software');
+
+console.log(newBookTitle);
