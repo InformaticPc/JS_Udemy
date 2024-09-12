@@ -54,3 +54,19 @@ console.log(books[1].title);
 const newBookTitle = books[1].title.replace('Programs', 'Software');
 
 console.log(newBookTitle);
+
+// =============================================================================
+// 16.3
+
+// Write a function called logBookTheme that takes book's title (string), and logs to the console:
+// "This book is about computers" if the title starts with the word "computer",
+// "This book is about algorithms and data structures"
+// if the title includes both the "algorithms" and "structures" words,
+// and, "This book is about some systems, but definitely not about operating systems"
+// if the title ends with the word "system" or "systems", but doesn't include the word "operating".
+
+//     tip
+// The title may contain both small and capital letters.
+console.log(
+  typeof ['Harold Abelson', 'Gerald Jay Sussman', 'Julie Sussman (Contributor)'].toString()
+);
