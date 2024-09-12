@@ -67,6 +67,20 @@ console.log(newBookTitle);
 
 //     tip
 // The title may contain both small and capital letters.
-console.log(
-  typeof ['Harold Abelson', 'Gerald Jay Sussman', 'Julie Sussman (Contributor)'].toString()
-);
+//[X] log all the titles
+//[] Put all strings in lower case
+/**
+ *
+ * @param {string} bookTitle
+ */
+const logBookTheme = function (bookTitle) {
+  if (bookTitle.indexOf('Computer') == 0) {
+    console.log('----FUNCTION----');
+    console.log('This book is about computers');
+    console.log('----------------');
+  }
+};
+for (const title of books.values()) {
+  console.log(title.title);
+  logBookTheme(title.title);
+}
