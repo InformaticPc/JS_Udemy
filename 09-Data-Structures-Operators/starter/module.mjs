@@ -35,7 +35,7 @@ export const books = [
     highlighted: true,
   },
   {
-    title: 'Structure and Interpretation of Computer Programs',
+    title: 'Structure and Interpretation "algorithms" of Computer Programs',
     author: ['Harold Abelson', 'Gerald Jay Sussman', 'Julie Sussman (Contributor)'],
     publisher: 'The MIT Press',
     publicationDate: '2022-04-12',
@@ -59,7 +59,7 @@ export const books = [
     highlighted: true,
   },
   {
-    title: "Computer Systems: A Programmer's Perspective",
+    title: "Computer Systems: A Programmer's Perspective system", // revome the 'system' at the end of each title, there wasn't any for next exercises.
     author: ['Randal E. Bryant', "David Richard O'Hallaron (Contributor)"],
     publisher: 'Prentice Hall',
     publicationDate: '2002-01-01',
@@ -90,7 +90,7 @@ export const books = [
     highlighted: true,
   },
   {
-    title: 'Operating System Concepts',
+    title: 'Operating System Concepts system',
     author: ['Abraham Silberschatz', 'Peter B. Galvin', 'Greg Gagne'],
     publisher: 'John Wiley & Sons',
     publicationDate: '2004-12-14',
@@ -121,7 +121,7 @@ export const books = [
     },
   },
   {
-    title: 'Engineering Mathematics',
+    title: 'Engineering Mathematics system',
     author: ['K.A. Stroud', 'Dexter J. Booth'],
     publisher: 'Palgrave',
     publicationDate: '2007-01-01',

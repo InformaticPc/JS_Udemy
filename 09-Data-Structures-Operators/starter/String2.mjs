@@ -57,15 +57,15 @@ console.log(newBookTitle);
 
 // =============================================================================
 // 16.3
+console.log('=================16.3=================');
+
 
 // Write a function called logBookTheme that takes book's title (string), and logs to the console:
 // "This book is about computers" if the title starts with the word "computer",
-// "This book is about algorithms and data structures"
-// if the title includes both the "algorithms" and "structures" words,
-// and, "This book is about some systems, but definitely not about operating systems"
-// if the title ends with the word "system" or "systems", but doesn't include the word "operating".
+// "This book is about algorithms and data structures"if the title includes both the "algorithms" and "structures" words, and, 
+//"This book is about some systems, but definitely not about operating systems" if the title ends with the word "system" or "systems", but doesn't include the word "operating".
 
-//     tip
+// tip:
 // The title may contain both small and capital letters.
 //[X] log all the titles
 //[] Put all strings in lower case
@@ -74,13 +74,22 @@ console.log(newBookTitle);
  * @param {string} bookTitle
  */
 const logBookTheme = function (bookTitle) {
-  if (bookTitle.indexOf('Computer') == 0) {
+  if (bookTitle.indexOf('computer') == 0) {
     console.log('----FUNCTION----');
     console.log('This book is about computers');
     console.log('----------------');
+
+  }else if(bookTitle.includes('algorithms') && bookTitle.includes('structure')){
+    console.log("👆This book is about algorithms and data structures👆")
+
+  }
+  if(bookTitle.endsWith('system') && !bookTitle.includes('operating')){
+    console.log("👆This book is about some systems, but definitely not about operating systems👆");
   }
 };
 for (const title of books.values()) {
   console.log(title.title);
-  logBookTheme(title.title);
+  console.log(title.title.endsWith('system'));
+  console.log(!title.title.includes('operating'));
+  logBookTheme(title.title.toLocaleLowerCase());
 }
