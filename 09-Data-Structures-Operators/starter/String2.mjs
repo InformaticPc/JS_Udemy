@@ -1,4 +1,4 @@
-'use string';
+'use strict';
 import { books } from './module.mjs';
 
 //Working with Strings - Part 2
@@ -37,7 +37,7 @@ function normalizeAuthorName(name) {
   console.log(name); // uppercase 1st character
   const indexSurName = cleanName.indexOf(' ') + 1;
   name = name.replace(name[indexSurName], name[indexSurName].toLocaleUpperCase());
-  // uppercase 2nd character
+  // uppercase surname
   console.log('## ALL Name fixed ✅ ##');
   console.log(name);
 }
