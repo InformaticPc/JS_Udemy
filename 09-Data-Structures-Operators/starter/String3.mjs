@@ -24,7 +24,7 @@ operating systems
 networking
 electronics
 */
-console.log('=================17.1=================');
+console.log('✅=================17.1=================✅');
 const bookCategories = 'science;computing;computer science;algorithms;business;operating systems;networking;electronics';
 logBookCategories(bookCategories);
 
@@ -52,12 +52,11 @@ getKeywordsAsString(books);
 
 computer science;programming;algorithms;data structures;java;math;software;engineering;javascript;computer systems;C;operating systems;Java;mathematics;business;compilers;interpreters;work;focus;personal development
 */
-console.log('=================17.2=================');
+console.log('✅=================17.2=================✅');
 getKeywordsAsString(books);
 /**@param {books} params */
 function getKeywordsAsString(params) {
-    const noDuplicates = new Set();
-    const keyWords =[];
+    const keyWords = [];
     params.forEach(book => {
         keyWords.push(...book.keywords)
         // console.log(fullArray);
@@ -90,4 +89,26 @@ Searching___________ 372
 Graphs______________ 526
 Strings_____________ 706
 */
+console.log('=================17.3=================');
+const bookChapters = [['The Basics', 14], ['Sorting', 254], ['Searching', 372], ['Graphs', 526], ['Strings', 706]];
+logBookChapters(bookChapters);
 
+/**
+ * takes an array of arrays (like bookChapters) as an argument, 
+ * and logs each chapter's name to the console together with the page number. 
+ * The page number should be separated from the chapter's name with underscores
+ * @param {Array} params 
+ */
+function logBookChapters(params) {
+    params.forEach(book => {
+
+        const srt = book[0].padEnd(15, '_') + ' ' + book[1];
+        console.log(srt);
+    });
+    /*   
+    // Probably best solution:
+        for (const [chapter, pages] of chapters) {
+            console.log(chapter.padEnd(20, '_') + ' ' + pages);
+        }
+    */
+}
