@@ -10,6 +10,8 @@
         height: 100vh;
         display: flex;
         align-items: center;
+        flex-direction: column;
+        
         background: linear-gradient(to top left, #28b487, #7dd56f);
       }
       h1 {
@@ -17,23 +19,41 @@
         font-size: 50px;
         line-height: 1.3;
         width: 100%;
-        padding: 30px;
+        padding: 3px;
         text-align: center;
         color: white;
+        margin: 1px;
+        
       }
+
       button {
-        width: 50px;
-        height: 20px;
         margin: 10px;
       }
+
       textarea {
         width: 300px;
         height: 100px;
+        resize: none;
+        
       }
-    </style>
+      textarea:invalid{
+        border: 2px solid red;
+      }
+      textarea:valid{
+        border: 2px solid rgb(21, 247, 122);
+      }
+      form{
+        margin: 2px;
+      }
+      </style>
   </head>
   <body>
     <h1>Data Structures and Modern Operators</h1>
-    <script src="DestructureObjects.js"></script>
+    
+    <form id="underSCOREnames">
+      <textarea id="namesScored" cols="25" rows="4" form="underSCOREnames" placeholder="Write names in underScoreCase and separate each one with a new line <Enter>" required ></textarea>
+      </form>
+      <button id="fixNames-BTN" class="btn-class">Fix names</button>
+      <script src="./Challenge4.mjs"></script>
   </body>
 </html>

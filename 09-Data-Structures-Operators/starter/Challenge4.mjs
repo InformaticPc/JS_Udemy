@@ -8,7 +8,6 @@ The input will come from a textarea inserted into the DOM (see code below), and 
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea
 
 THIS TEST DATA (pasted to textarea)
-underscore_case
  first_name
 Some_Variable
   calculate_AGE
@@ -29,22 +28,36 @@ HINT 4: This challenge is difficult on purpose, so start watching the solution i
 Afterwards, test with your own test data!
 
 GOOD LUCK 😀
+
+SRC:
+https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction
+
 */
 // [] you can use Destructure arrays [asd,sadf] = array;
 // [x] Mind the spaces.
 // [x] Could be more than one underScore '_'.
-// [] Create textArea.
-// [] Create a buttom.
-// [] Make the function of that button to use a function 'toCamelCase' and modify the values inside textarea with the value returned (REMEMBER IS AN ARRAY). 
+// [x] Create textArea.
+// [x] Create a buttom.
+// [x] Take the text and conver to array if there is more than one line inserted '\n'.
+// [x] Make the function of that button to use a function 'toCamelCase' and modify the values inside textarea with the value returned (REMEMBER IS AN ARRAY). 
+// [x] Need to check how to submit the the text typed by user to the textarea. (which one is the property or atrivute to retrieve the value from textarea).
+// [] SHOULD PRODUCE THIS OUTPUT (5 separate console.log outputs)
+// underscoreCase      ✅
+// firstName           ✅✅ etc...
 
-const arr = ['underscore_case',
-    ' first_name',
-    'Some_Variable',
+const arr = ['undeore_case',
+    ' first_nam',
+    'Some_Varible',
     '  calculate_AGE',
     'delayed_departure',
-    'fuk_this_shit'];
+    'fuk_this_shit']; 
 
 console.log(arr);
+
+const button = document.getElementById('fixNames-BTN');
+console.log(button);
+
+
 /**
  * Funtion that takes an array of strings of underscore_case
  * convert them to camelCase and
@@ -74,6 +87,15 @@ function toCamelCase(array) {
     });
     return goodArray;
 }
-
-
-console.log(toCamelCase(arr)); 
+  
+button.addEventListener('click', () => {
+    console.log('Button clicked!');
+    const textArea = document.getElementById("namesScored");
+    console.log(textArea);
+    const textAreaValue = textArea.value;
+    console.log(textAreaValue);
+    const textAreaArray = textAreaValue.split('\n');
+    console.log(textAreaArray);
+    textArea.value = toCamelCase(textAreaArray).join('\n');
+    
+})
