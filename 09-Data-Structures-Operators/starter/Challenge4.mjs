@@ -33,7 +33,6 @@ SRC:
 https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction
 
 */
-// [] you can use Destructure arrays [asd,sadf] = array;
 // [x] Mind the spaces.
 // [x] Could be more than one underScore '_'.
 // [x] Create textArea.
@@ -41,18 +40,10 @@ https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduct
 // [x] Take the text and conver to array if there is more than one line inserted '\n'.
 // [x] Make the function of that button to use a function 'toCamelCase' and modify the values inside textarea with the value returned (REMEMBER IS AN ARRAY). 
 // [x] Need to check how to submit the the text typed by user to the textarea. (which one is the property or atrivute to retrieve the value from textarea).
-// [] SHOULD PRODUCE THIS OUTPUT (5 separate console.log outputs)
+// [x] SHOULD PRODUCE THIS OUTPUT (5 separate console.log outputs)
 // underscoreCase      ✅
 // firstName           ✅✅ etc...
 
-const arr = ['undeore_case',
-    ' first_nam',
-    'Some_Varible',
-    '  calculate_AGE',
-    'delayed_departure',
-    'fuk_this_shit']; 
-
-console.log(arr);
 
 const button = document.getElementById('fixNames-BTN');
 console.log(button);
@@ -69,33 +60,40 @@ console.log(button);
 
 function toCamelCase(array) {
     const goodArray = [];
-    array.forEach(word => {
-        // place them to lower case and separate words by '_'.
-        let eachWord = word.toLowerCase().split('_');
+    array.forEach((name, index) => {
+    // place them to lower case and separate words by '_'.
+        let nameArray = name.toLowerCase().split('_');
 
-        // console.log(eachWord);
+        console.log(nameArray+ ' Array name');
 
-        for (let i = 1; i < eachWord.length; i++) {
-            console.log(eachWord[i] + '====== to change');
-            eachWord[i] = eachWord[i].replace(eachWord[i][0], eachWord[i][0].toUpperCase());
+    // Capitalize the first character from the second element in each array
+        for (let i = 1; i < nameArray.length; i++) {
+            console.log(nameArray[i] + '====== to change');
+            nameArray[i] = nameArray[i].replace(nameArray[i][0], nameArray[i][0].toUpperCase());
         }
-        // join all the array as each string and fix the spaces
-        // And push it to the new array
-        goodArray.push(eachWord.join('').trim());
-
+        // join all the array as each string and fix the spaces.
+        // add the end pad to stylus as wanted.
+        // push it to the new array.
+        goodArray.push(nameArray.join('').trim().padEnd(20, ' ').padEnd(20+1+index, '✅'));
+        console.log(index + ' ' + goodArray[index].padEnd(20, ' ').padEnd(20+1+index, '✅'));
+        
 
     });
     return goodArray;
 }
-  
+
+// Button EVENT
+// take the text and conver to array if there is more than one line inserted '\n'.
+// Need to create the variables of the text area here, otherwise it will not
+// take the value from textarea after the button is clicked.
 button.addEventListener('click', () => {
     console.log('Button clicked!');
     const textArea = document.getElementById("namesScored");
-    console.log(textArea);
+    
     const textAreaValue = textArea.value;
-    console.log(textAreaValue);
+    
     const textAreaArray = textAreaValue.split('\n');
     console.log(textAreaArray);
     textArea.value = toCamelCase(textAreaArray).join('\n');
-    
-})
+
+});
