@@ -1,6 +1,8 @@
 body {
     height: 100vh;    
     background: linear-gradient(to top left, #28b487, #7dd56f);
+    display: flex;
+    flex-direction: column;
   }
   h1 {
     font-family: sans-serif;
@@ -10,28 +12,24 @@ body {
     padding: 3px;
     text-align: center;
     color: white;
-    margin: 1px;
-    
-    
+    margin: 1px;    
   }
 
   button {
     margin: 10px;
   }
-section{
-  margin: 10px;
+section{ 
+  flex: auto;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
 }
-form{
-  margin: 2px;
-   
-}
+
   textarea {
     width: 300px;
     height: 100px;
     resize: none;
-    flex-direction: column;
   }
   textarea:invalid{
     border: 2px solid red;

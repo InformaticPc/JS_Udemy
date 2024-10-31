@@ -91,6 +91,9 @@ button.addEventListener('click', () => {
     const textArea = document.getElementById("namesScored");
     
     const textAreaValue = textArea.value;
+    if (textAreaValue === '') {
+        return alert('Please insert some text');        
+    }
     
     const textAreaArray = textAreaValue.split('\n');
     console.log(textAreaArray);
